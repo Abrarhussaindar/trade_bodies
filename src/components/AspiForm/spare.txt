@@ -1,0 +1,1762 @@
+{
+                userData.FormalTrainEdu === "Yes"
+                    ?
+                    <div className="indiDetails">
+                        <label htmlFor="email">Educational or Training Program</label>
+                        <div className="customSelect">
+
+                            <select value={userData['FTEduTrainProg']} required onChange={(e) => setUserData({ ...userData, "FTEduTrainProg": e.target.value })}>
+                                <option value="">Select Option</option>
+                                <hr />
+                                <option value="Traditional college/university degree programs">Traditional college/university degree programs</option>
+                                <hr />
+                                <option value="Vocational/technical training programs">Vocational/technical training programs</option>
+                                <hr />
+                                <option value="Online courses or certifications">Online courses or certifications</option>
+                                <hr />
+                                <option value="Apprenticeship programs">Apprenticeship programs</option>
+                                <hr />
+                                <option value="Entrepreneurship training">Entrepreneurship training</option>
+                                <hr />
+                                <option value="Other">Other (please specify)</option>
+                            </select>
+                            <span className="customArrow">
+                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                            </span>
+                        </div>
+                        {
+                            userData.FTEduTrainProg === "Traditional college/university degree programs"
+                                ?
+                                <>
+                                    <div className="indiDetails">
+                                        <label htmlFor="email">Programes</label>
+                                        <div className="customSelect">
+
+                                            <select value={userData['FTClgUniDegreeProg']} required onChange={(e) => setUserData({ ...userData, "FTClgUniDegreeProg": e.target.value })}>
+                                                <option value="">Select Option</option>
+                                                <hr />
+                                                <option value="Under Graduate">Under Graduate</option>
+                                                <hr />
+                                                <option value="Post Graduate">Post Graduate</option>
+                                                <hr />
+                                                <option value="Other">Other (please specify)</option>
+                                            </select>
+                                            <span className="customArrow">
+                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                            </span>
+                                        </div>
+                                        {
+                                            userData.FTClgUniDegreeProg === "Under Graduate"
+                                                ?
+                                                <>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Course</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['FTUnderGradCourseProg']} required onChange={(e) => setUserData({ ...userData, "FTUnderGradCourseProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                <option value="Bachelor of Arts (B.A.)">Bachelor of Arts (B.A.)</option>
+                                                                <hr />
+                                                                <option value="Bachelor of Science (B.Sc.)">Bachelor of Science (B.Sc.)</option>
+                                                                <hr />
+                                                                <option value="Bachelor of Commerce (B.Com.)">Bachelor of Commerce (B.Com.)</option>
+                                                                <hr />
+                                                                <option value="Professional Degrees">Professional Degrees</option>
+                                                                {/* <hr />
+                                                            <option value="B Tech">B Tech</option>
+                                                            <hr />
+                                                            <option value="BE">BE</option> */}
+                                                                <hr />
+                                                                <option value="Other">Other (please specify)</option>
+
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.FTUnderGradCourseProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherFTUnderGradCourseProg']} required onChange={(e) => setUserData({ ...userData, "OtherFTUnderGradCourseProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Field</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['FTUnderGradFieldProg']} required onChange={(e) => setUserData({ ...userData, "FTUnderGradFieldProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                {
+                                                                    userData.FTUnderGradCourseProg === "Bachelor of Arts (B.A.)"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="English Literature">English Literature</option>
+                                                                            <hr />
+                                                                            <option value="History">History</option>
+                                                                            <hr />
+                                                                            <option value="Political Science">Political Science</option>
+                                                                            <hr />
+                                                                            <option value="Economics">Economics</option>
+                                                                            <hr />
+                                                                            <option value="Sociology">Sociology</option>
+                                                                            <hr />
+                                                                            <option value="Psychology">Psychology</option>
+                                                                            <hr />
+                                                                            <option value="Geography">Geography</option>
+                                                                            <hr />
+                                                                            <option value="Philosophy">Philosophy</option>
+                                                                            <hr />
+                                                                            <option value="Languages (e.g., Hindi, Urdu, Sanskrit)">Languages (e.g., Hindi, Urdu, Sanskrit)</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+                                                                {
+                                                                    userData.FTUnderGradCourseProg === "Bachelor of Science (B.Sc.)"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="Mathematics">Mathematics</option>
+                                                                            <hr />
+                                                                            <option value="Physics">Physics</option>
+                                                                            <hr />
+                                                                            <option value="Chemistry">Chemistry</option>
+                                                                            <hr />
+                                                                            <option value="Biology">Biology</option>
+                                                                            <hr />
+                                                                            <option value="Computer Science">Computer Science</option>
+                                                                            <hr />
+                                                                            <option value="Environmental Science">Environmental Science</option>
+                                                                            <hr />
+                                                                            <option value="Statistics">Statistics</option>
+                                                                            <hr />
+                                                                            <option value="Electronics">Electronics</option>
+                                                                            <hr />
+                                                                            <option value="Geology">Geology</option>
+                                                                            <hr />
+                                                                            <option value="Botany">Botany</option>
+                                                                            <hr />
+                                                                            <option value="Zoology">Zoology</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+                                                                {
+                                                                    userData.FTUnderGradCourseProg === "Bachelor of Commerce (B.Com.)"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="Accountancy">Accountancy</option>
+                                                                            <hr />
+                                                                            <option value="Business Studies">Business Studies</option>
+                                                                            <hr />
+                                                                            <option value="Economics">Economics</option>
+                                                                            <hr />
+                                                                            <option value="Financial Management">Financial Management</option>
+                                                                            <hr />
+                                                                            <option value="Taxation">Taxation</option>
+                                                                            <hr />
+                                                                            <option value="Business Law">Business Law</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+                                                                {
+                                                                    userData.FTUnderGradCourseProg === "Professional Degrees"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="Bachelor of Engineering (B.E.)">Bachelor of Engineering (B.E.)</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Technology (B.Tech.)">Bachelor of Technology (B.Tech.)</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Computer Applications (BCA)">Bachelor of Computer Applications (BCA)</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Business Administration (BBA)">Bachelor of Business Administration (BBA)</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Architecture (B.Arch.)">Bachelor of Architecture (B.Arch.)</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Pharmacy (B.Pharm)">Bachelor of Pharmacy (B.Pharm)</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Education (B.Ed.)">Bachelor of Education (B.Ed.)</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Tourism">Bachelor of Tourism</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of IT">Bachelor of IT</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Hotel Manangment">Bachelor of Hotel Manangment</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Fashion Technology">Bachelor of Fashion Technology</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Mass Communication">Bachelor of Mass Communication</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Agriculture">Bachelor of Agriculture</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+
+
+
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.FTUnderGradFieldProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherFTUnderGradFieldProg']} required onChange={(e) => setUserData({ ...userData, "OtherFTUnderGradFieldProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div></>
+                                                : ""
+                                        }
+                                        {/* under grad fields */}
+                                        {
+                                            userData.FTUnderGradFieldProg === "Bachelor of Engineering (B.E.)"
+                                                ?
+                                                <>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Branch</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['FTUnderGradBranchProg']} required onChange={(e) => setUserData({ ...userData, "FTUnderGradBranchProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                <option value="Civil Engineering">Civil Engineering</option>
+                                                                <hr />
+                                                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                                                <hr />
+                                                                <option value="Electrical Engineering">Electrical Engineering</option>
+                                                                <hr />
+                                                                <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                                                                <hr />
+                                                                <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+                                                                <hr />
+                                                                <option value="Chemical Engineering">Chemical Engineering</option>
+                                                                <hr />
+                                                                <option value="Aerospace Engineering">Aerospace Engineering</option>
+                                                                <hr />
+                                                                <option value="Biomedical Engineering">Biomedical Engineering</option>
+                                                                <hr />
+                                                                <option value="Environmental Engineering">Environmental Engineering</option>
+                                                                <hr />
+                                                                <option value="Industrial Engineering">Industrial Engineering</option>
+                                                                <hr />
+                                                                <option value="Agricultural Engineering">Agricultural Engineering</option>
+                                                                <hr />
+                                                                <option value="Mining Engineering">Mining Engineering</option>
+                                                                <hr />
+                                                                <option value="Petroleum Engineering">Petroleum Engineering</option>
+                                                                <hr />
+                                                                <option value="Textile Engineering">Textile Engineering</option>
+                                                                <hr />
+                                                                <option value="Metallurgical Engineering">Metallurgical Engineering</option>
+                                                                <hr />
+                                                                <option value="Automobile Engineering">Automobile Engineering</option>
+                                                                <hr />
+                                                                <option value="Instrumentation Engineering">Instrumentation Engineering</option>
+                                                                <hr />
+                                                                <option value="Ceramic Engineering">Ceramic Engineering</option>
+                                                                <hr />
+                                                                <option value="Marine Engineering">Marine Engineering</option>
+                                                                <hr />
+                                                                <option value="Fire Engineering">Fire Engineering</option>
+
+                                                                <hr />
+                                                                <option value="Other">Other (please specify)</option>
+                                                                {/* <hr />
+                                                            <option value="B Tech">B Tech</option>
+                                                            <hr />
+                                                            <option value="BE">BE</option> */}
+
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.FTUnderGradBranchProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherFTUnderGradBranchProg']} required onChange={(e) => setUserData({ ...userData, "OtherFTUnderGradBranchProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div>
+                                                </>
+                                                : ""
+                                        }
+                                        {
+                                            userData.FTUnderGradFieldProg === "Bachelor of Technology (B.Tech.)"
+                                                ?
+                                                <>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Branch</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['FTUnderGradBranchProg']} required onChange={(e) => setUserData({ ...userData, "FTUnderGradBranchProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                <option value="Computer Science and Engineering (CSE)">Computer Science and Engineering (CSE)</option>
+                                                                <hr />
+                                                                <option value="Mechanical Engineering (ME)">Mechanical Engineering (ME)</option>
+                                                                <hr />
+                                                                <option value="Electrical Engineering (EE)">Electrical Engineering (EE)</option>
+                                                                <hr />
+                                                                <option value="Civil Engineering (CE)">Civil Engineering (CE)</option>
+                                                                <hr />
+                                                                <option value="Electronics and Communication Engineering (ECE)">Electronics and Communication Engineering (ECE)</option>
+                                                                <hr />
+                                                                <option value="Information Technology (IT)">Information Technology (IT)</option>
+                                                                <hr />
+                                                                <option value="Chemical Engineering (ChemE)">Chemical Engineering (ChemE)</option>
+                                                                <hr />
+                                                                <option value="Aerospace Engineering">Aerospace Engineering</option>
+                                                                <hr />
+                                                                <option value="Biotechnology Engineering">Biotechnology Engineering</option>
+                                                                <hr />
+                                                                <option value="Automobile Engineering">Automobile Engineering</option>
+                                                                <hr />
+                                                                <option value="Instrumentation Engineering">Instrumentation Engineering</option>
+                                                                <hr />
+                                                                <option value="Environmental Engineering">Environmental Engineering</option>
+                                                                <hr />
+                                                                <option value="Industrial Engineering">Industrial Engineering</option>
+                                                                <hr />
+                                                                <option value="Agricultural Engineering">Agricultural Engineering</option>
+                                                                <hr />
+                                                                <option value="Petroleum Engineering">Petroleum Engineering</option>
+                                                                <hr />
+                                                                <option value="Mining Engineering">Mining Engineering</option>
+                                                                <hr />
+                                                                <option value="Metallurgical Engineering">Metallurgical Engineering</option>
+                                                                <hr />
+                                                                <option value="Textile Engineering">Textile Engineering</option>
+                                                                <hr />
+                                                                <option value="Bioinformatics">Bioinformatics</option>
+                                                                <hr />
+                                                                <option value="Food Technology">Food Technology</option>
+
+                                                                <hr />
+                                                                <option value="Other">Other (please specify)</option>
+                                                                {/* <hr />
+                                                            <option value="B Tech">B Tech</option>
+                                                            <hr />
+                                                            <option value="BE">BE</option> */}
+
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.FTUnderGradBranchProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherFTUnderGradBranchProg']} required onChange={(e) => setUserData({ ...userData, "OtherFTUnderGradBranchProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div>
+                                                </>
+                                                : ""
+                                        }
+                                        {
+                                            userData.FTClgUniDegreeProg === "Post Graduate"
+                                                ?
+                                                <>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Course</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['FTPGCourseProg']} required onChange={(e) => setUserData({ ...userData, "FTPGCourseProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                <option value="Masters in Arts (M.A.)">Masters in Arts (M.A.)</option>
+                                                                <hr />
+                                                                <option value="Masters in Science (M.Sc.)">Masters in Science (M.Sc.)</option>
+                                                                <hr />
+                                                                <option value="Masters in Commerce (M.Com.)">Masters in Commerce (M.Com.)</option>
+                                                                <hr />
+                                                                <option value="Professional Degrees">Professional Degrees</option>
+                                                                {/* <hr />
+                                                            <option value="B Tech">B Tech</option>
+                                                            <hr />
+                                                            <option value="BE">BE</option> */}
+
+                                                                <hr />
+                                                                <option value="Other">Other (please specify)</option>
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.FTPGCourseProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherFTPGCourseProg']} required onChange={(e) => setUserData({ ...userData, "OtherFTPGCourseProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Field</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['FTPGFieldProg']} required onChange={(e) => setUserData({ ...userData, "FTPGFieldProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                {
+                                                                    userData.FTPGCourseProg === "Masters in Arts (M.A.)"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="English Literature">English Literature</option>
+                                                                            <hr />
+                                                                            <option value="History">History</option>
+                                                                            <hr />
+                                                                            <option value="Political Science">Political Science</option>
+                                                                            <hr />
+                                                                            <option value="Economics">Economics</option>
+                                                                            <hr />
+                                                                            <option value="Sociology">Sociology</option>
+                                                                            <hr />
+                                                                            <option value="Psychology">Psychology</option>
+                                                                            <hr />
+                                                                            <option value="Geography">Geography</option>
+                                                                            <hr />
+                                                                            <option value="Philosophy">Philosophy</option>
+                                                                            <hr />
+                                                                            <option value="Languages (e.g., Hindi, Urdu, Sanskrit)">Languages (e.g., Hindi, Urdu, Sanskrit)</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+                                                                {
+                                                                    userData.FTPGCourseProg === "Masters in Science (M.Sc.)"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="Mathematics">Mathematics</option>
+                                                                            <hr />
+                                                                            <option value="Physics">Physics</option>
+                                                                            <hr />
+                                                                            <option value="Chemistry">Chemistry</option>
+                                                                            <hr />
+                                                                            <option value="Biology">Biology</option>
+                                                                            <hr />
+                                                                            <option value="Computer Science">Computer Science</option>
+                                                                            <hr />
+                                                                            <option value="Environmental Science">Environmental Science</option>
+                                                                            <hr />
+                                                                            <option value="Statistics">Statistics</option>
+                                                                            <hr />
+                                                                            <option value="Electronics">Electronics</option>
+                                                                            <hr />
+                                                                            <option value="Geology">Geology</option>
+                                                                            <hr />
+                                                                            <option value="Botany">Botany</option>
+                                                                            <hr />
+                                                                            <option value="Zoology">Zoology</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+                                                                {
+                                                                    userData.FTPGCourseProg === "Masters in Commerce (M.Com.)"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="Accountancy">Accountancy</option>
+                                                                            <hr />
+                                                                            <option value="Business Studies">Business Studies</option>
+                                                                            <hr />
+                                                                            <option value="Economics">Economics</option>
+                                                                            <hr />
+                                                                            <option value="Financial Management">Financial Management</option>
+                                                                            <hr />
+                                                                            <option value="Taxation">Taxation</option>
+                                                                            <hr />
+                                                                            <option value="Business Law">Business Law</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+                                                                {
+                                                                    userData.FTPGCourseProg === "Professional Degrees"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="Masters of Engineering (M.E.)">Masters of Engineering (M.E.)</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Technology (M.Tech.)">Masters of Technology (M.Tech.)</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Computer Applications (MCA)">Masters of Computer Applications (MCA)</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Business Administration (MBA)">Masters of Business Administration (MBA)</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Architecture (M.Arch.)">Masters of Architecture (M.Arch.)</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Pharmacy (M.Pharm)">Masters of Pharmacy (M.Pharm)</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Education (M.Ed.)">Mastersr of Education (M.Ed.)</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Tourism">Masters of Tourism</option>
+                                                                            <hr />
+                                                                            <option value="Masters of IT">Masters of IT</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Hotel Manangment">Masters of Hotel Manangment</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Fashion Technology">Masters of Fashion Technology</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Mass Communication">Masters of Mass Communication</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Agriculture">Masters of Agriculture</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+
+
+
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.FTPGFieldProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherFTPGFieldProg']} required onChange={(e) => setUserData({ ...userData, "OtherFTPGFieldProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div></>
+                                                : ""
+                                        }
+                                        {/* under grad fields */}
+                                        {
+                                            userData.FTPGFieldProg === "Masters of Engineering (M.E.)"
+                                                ?
+                                                <>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Branch</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['FTPGBranchProg']} required onChange={(e) => setUserData({ ...userData, "FTPGBranchProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                <option value="Civil Engineering">Civil Engineering</option>
+                                                                <hr />
+                                                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                                                <hr />
+                                                                <option value="Electrical Engineering">Electrical Engineering</option>
+                                                                <hr />
+                                                                <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                                                                <hr />
+                                                                <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+                                                                <hr />
+                                                                <option value="Chemical Engineering">Chemical Engineering</option>
+                                                                <hr />
+                                                                <option value="Aerospace Engineering">Aerospace Engineering</option>
+                                                                <hr />
+                                                                <option value="Biomedical Engineering">Biomedical Engineering</option>
+                                                                <hr />
+                                                                <option value="Environmental Engineering">Environmental Engineering</option>
+                                                                <hr />
+                                                                <option value="Industrial Engineering">Industrial Engineering</option>
+                                                                <hr />
+                                                                <option value="Agricultural Engineering">Agricultural Engineering</option>
+                                                                <hr />
+                                                                <option value="Mining Engineering">Mining Engineering</option>
+                                                                <hr />
+                                                                <option value="Petroleum Engineering">Petroleum Engineering</option>
+                                                                <hr />
+                                                                <option value="Textile Engineering">Textile Engineering</option>
+                                                                <hr />
+                                                                <option value="Metallurgical Engineering">Metallurgical Engineering</option>
+                                                                <hr />
+                                                                <option value="Automobile Engineering">Automobile Engineering</option>
+                                                                <hr />
+                                                                <option value="Instrumentation Engineering">Instrumentation Engineering</option>
+                                                                <hr />
+                                                                <option value="Ceramic Engineering">Ceramic Engineering</option>
+                                                                <hr />
+                                                                <option value="Marine Engineering">Marine Engineering</option>
+                                                                <hr />
+                                                                <option value="Fire Engineering">Fire Engineering</option>
+
+                                                                <hr />
+                                                                <option value="Other">Other (please specify)</option>
+                                                                {/* <hr />
+                                                            <option value="B Tech">B Tech</option>
+                                                            <hr />
+                                                            <option value="BE">BE</option> */}
+
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.FTPGBranchProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherFTPGBranchProg']} required onChange={(e) => setUserData({ ...userData, "OtherFTPGBranchProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div>
+                                                </>
+                                                : ""
+                                        }
+                                        {
+                                            userData.FTPGFieldProg === "Masters of Technology (M.Tech.)"
+                                                ?
+                                                <>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Branch</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['FTPGBranchProg']} required onChange={(e) => setUserData({ ...userData, "FTPGBranchProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                <option value="Computer Science and Engineering (CSE)">Computer Science and Engineering (CSE)</option>
+                                                                <hr />
+                                                                <option value="Mechanical Engineering (ME)">Mechanical Engineering (ME)</option>
+                                                                <hr />
+                                                                <option value="Electrical Engineering (EE)">Electrical Engineering (EE)</option>
+                                                                <hr />
+                                                                <option value="Civil Engineering (CE)">Civil Engineering (CE)</option>
+                                                                <hr />
+                                                                <option value="Electronics and Communication Engineering (ECE)">Electronics and Communication Engineering (ECE)</option>
+                                                                <hr />
+                                                                <option value="Information Technology (IT)">Information Technology (IT)</option>
+                                                                <hr />
+                                                                <option value="Chemical Engineering (ChemE)">Chemical Engineering (ChemE)</option>
+                                                                <hr />
+                                                                <option value="Aerospace Engineering">Aerospace Engineering</option>
+                                                                <hr />
+                                                                <option value="Biotechnology Engineering">Biotechnology Engineering</option>
+                                                                <hr />
+                                                                <option value="Automobile Engineering">Automobile Engineering</option>
+                                                                <hr />
+                                                                <option value="Instrumentation Engineering">Instrumentation Engineering</option>
+                                                                <hr />
+                                                                <option value="Environmental Engineering">Environmental Engineering</option>
+                                                                <hr />
+                                                                <option value="Industrial Engineering">Industrial Engineering</option>
+                                                                <hr />
+                                                                <option value="Agricultural Engineering">Agricultural Engineering</option>
+                                                                <hr />
+                                                                <option value="Petroleum Engineering">Petroleum Engineering</option>
+                                                                <hr />
+                                                                <option value="Mining Engineering">Mining Engineering</option>
+                                                                <hr />
+                                                                <option value="Metallurgical Engineering">Metallurgical Engineering</option>
+                                                                <hr />
+                                                                <option value="Textile Engineering">Textile Engineering</option>
+                                                                <hr />
+                                                                <option value="Bioinformatics">Bioinformatics</option>
+                                                                <hr />
+                                                                <option value="Food Technology">Food Technology</option>
+
+                                                                <hr />
+                                                                <option value="Other">Other (please specify)</option>
+                                                                {/* <hr />
+                                                            <option value="B Tech">B Tech</option>
+                                                            <hr />
+                                                            <option value="BE">BE</option> */}
+
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.FTPGBranchProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherFTPGBranchProg']} required onChange={(e) => setUserData({ ...userData, "OtherFTPGBranchProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div>
+                                                </>
+                                                : ""
+                                        }
+
+                                        {
+                                            userData.FTClgUniDegreeProg === "Other"
+                                                ?
+                                                <div className='other'>
+                                                    <h5>
+                                                        Specify:
+                                                    </h5>
+                                                    <input type="text" value={userData['OtherFTClgUniDegreeProg']} required onChange={(e) => setUserData({ ...userData, "OtherFTClgUniDegreeProg": e.target.value })} name="name" id="name" />
+                                                </div>
+                                                : ""
+                                        }
+
+                                    </div>
+                                </>
+                                : ""
+                        }
+                        {
+                            userData.FTEduTrainProg === "Vocational/technical training programs"
+                                ?
+                                <>
+                                    <div className="indiDetails">
+                                        <label htmlFor="email">Courses</label>
+                                        <div className="customSelect">
+
+                                            <select value={userData['VocTechProg']} required onChange={(e) => setUserData({ ...userData, "VocTechProg": e.target.value })}>
+                                                <option value="">Select Option</option>
+                                                <hr />
+                                                <option value="Courses Offered By ITIs">Courses Offered By ITIs</option>
+                                                <hr />
+                                                <option value="Courses Offered By Polytechnics">Courses Offered By Polytechnics</option>
+                                                <hr />
+                                                <option value="Other">Other (please specify)</option>
+                                            </select>
+                                            <span className="customArrow">
+                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                            </span>
+                                        </div>
+
+                                        {
+                                            userData.VocTechProg === "Courses Offered By ITIs"
+                                                ? <>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Course</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['VTPCourseByIti']} required onChange={(e) => setUserData({ ...userData, "VTPCourseByIti": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                <option value="Electrician">Electrician</option>
+                                                                <hr />
+                                                                <option value="Fitter">Fitter</option>
+                                                                <hr />
+                                                                <option value="Mechanic (Motor Vehicle)">Mechanic (Motor Vehicle)</option>
+                                                                <hr />
+                                                                <option value="Welder (Gas & Electric)">Welder (Gas & Electric)</option>
+                                                                <hr />
+                                                                <option value="Turner">Turner</option>
+                                                                <hr />
+                                                                <option value="Machinist">Machinist</option>
+                                                                <hr />
+                                                                <option value="Draughtsman (Civil/Mechanical)">Draughtsman (Civil/Mechanical)</option>
+                                                                <hr />
+                                                                <option value="Electronics Mechanic">Electronics Mechanic</option>
+                                                                <hr />
+                                                                <option value="Instrument Mechanic">Instrument Mechanic</option>
+                                                                <hr />
+                                                                <option value="Refrigeration and Air Conditioning Mechanic">Refrigeration and Air Conditioning Mechanic</option>
+                                                                <hr />
+                                                                <option value="Information Technology and Electronics System Maintenance (ITESM)">Information Technology and Electronics System Maintenance (ITESM)</option>
+                                                                <hr />
+                                                                <option value="Computer Operator and Programming Assistant (COPA)">Computer Operator and Programming Assistant (COPA)</option>
+                                                                <hr />
+                                                                <option value="Mechanic Diesel Engine">Mechanic Diesel Engine</option>
+                                                                <hr />
+                                                                <option value="Carpenter">Carpenter</option>
+                                                                <hr />
+                                                                <option value="Plumber">Plumber</option>
+                                                                <hr />
+                                                                <option value="Surveyor">Surveyor</option>
+                                                                <hr />
+                                                                <option value="Mechanic Radio & Television (MRTV)">Mechanic Radio & Television (MRTV)</option>
+                                                                <hr />
+                                                                <option value="Mechanic Agricultural Machinery">Mechanic Agricultural Machinery</option>
+                                                                <hr />
+                                                                <option value="Mechanic Auto Electrical & Electronics">Mechanic Auto Electrical & Electronics</option>
+                                                                <hr />
+                                                                <option value="Mechanic Consumer Electronics Appliances">Mechanic Consumer Electronics Appliances</option>
+                                                                <hr />
+                                                                <option value="Other">Other (please specify)</option>
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.VTPCourseByIti === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherVTPCourseByIti']} required onChange={(e) => setUserData({ ...userData, "OtherVTPCourseByIti": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div>
+                                                </>
+                                                : ""
+                                        }
+                                        {
+                                            userData.VocTechProg === "Courses Offered By Polytechnics"
+                                                ? <>
+
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Course</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['VTPCourseByPoly']} required onChange={(e) => setUserData({ ...userData, "VTPCourseByPoly": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                <option value="Civil Engineering">Civil Engineering</option>
+                                                                <hr />
+                                                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                                                <hr />
+                                                                <option value="Electrical Engineering">Electrical Engineering</option>
+                                                                <hr />
+                                                                <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+                                                                <hr />
+                                                                <option value="Computer Engineering">Computer Engineering</option>
+                                                                <hr />
+                                                                <option value="Information Technology">Information Technology</option>
+                                                                <hr />
+                                                                <option value="Automobile Engineering">Automobile Engineering</option>
+                                                                <hr />
+                                                                <option value="Chemical Engineering">Chemical Engineering</option>
+                                                                <hr />
+                                                                <option value="Instrumentation Engineering">Instrumentation Engineering</option>
+                                                                <hr />
+                                                                <option value="Architecture Assistantship">Architecture Assistantship</option>
+                                                                <hr />
+                                                                <option value="Mining Engineering">Mining Engineering</option>
+                                                                <hr />
+                                                                <option value="Production Engineering">Production Engineering</option>
+                                                                <hr />
+                                                                <option value="Textile Engineering">Textile Engineering</option>
+                                                                <hr />
+                                                                <option value="Agricultural Engineering">Agricultural Engineering</option>
+                                                                <hr />
+                                                                <option value="Environmental Engineering">Environmental Engineering</option>
+                                                                <hr />
+                                                                <option value="Plastic Technology">Plastic Technology</option>
+                                                                <hr />
+                                                                <option value="Ceramic Technology">Ceramic Technology</option>
+                                                                <hr />
+                                                                <option value="Refrigeration and Air Conditioning Engineering">Refrigeration and Air Conditioning Engineering</option>
+                                                                <hr />
+                                                                <option value="Mechatronics Engineering">Mechatronics Engineering</option>
+                                                                <hr />
+                                                                <option value="Marine Engineering">Marine Engineering</option>
+                                                                <hr />
+                                                                <option value="Other">Other (please specify)</option>
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.VTPCourseByPoly === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherVTPCourseByPoly']} required onChange={(e) => setUserData({ ...userData, "OtherVTPCourseByPoly": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div>
+                                                </>
+                                                : ""
+                                        }
+
+                                        {
+                                            userData.VocTechProg === "Other"
+                                                ?
+                                                <div className='other'>
+                                                    <h5>
+                                                        Specify:
+                                                    </h5>
+                                                    <input type="text" value={userData['OtherVocTechProg']} required onChange={(e) => setUserData({ ...userData, "OtherVocTechProg": e.target.value })} name="name" id="name" />
+                                                </div>
+                                                : ""
+                                        }
+
+                                    </div>
+                                </>
+                                : ""
+                        }
+                        {
+                            userData.FTEduTrainProg === "Online courses or certifications"
+                                ?
+                                <>
+                                    <div className="indiDetails">
+                                        <label htmlFor="email">Online courses/certifications</label>
+                                        <div className="customSelect">
+
+                                            <select value={userData['OCCProg']} required onChange={(e) => setUserData({ ...userData, "OCCProg": e.target.value })}>
+                                                <option value="">Select Option</option>
+                                                <hr />
+                                                <option value="Under Graduate">Under Graduate</option>
+                                                <hr />
+                                                <option value="Post Graduate">Post Graduate</option>
+                                                <hr />
+                                                <option value="Other">Other (please specify)</option>
+                                            </select>
+                                            <span className="customArrow">
+                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                            </span>
+                                        </div>
+                                        {
+                                            userData.OCCProg === "Under Graduate"
+                                                ?
+                                                <>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Course</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['OCCUnderGradCourseProg']} required onChange={(e) => setUserData({ ...userData, "OCCUnderGradCourseProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                <option value="Bachelor of Arts (B.A.)">Bachelor of Arts (B.A.)</option>
+                                                                <hr />
+                                                                <option value="Bachelor of Science (B.Sc.)">Bachelor of Science (B.Sc.)</option>
+                                                                <hr />
+                                                                <option value="Bachelor of Commerce (B.Com.)">Bachelor of Commerce (B.Com.)</option>
+                                                                <hr />
+                                                                <option value="Professional Degrees">Professional Degrees</option>
+                                                                {/* <hr />
+                                                            <option value="B Tech">B Tech</option>
+                                                            <hr />
+                                                            <option value="BE">BE</option> */}
+                                                                <hr />
+                                                                <option value="Other">Other (please specify)</option>
+
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.OCCUnderGradCourseProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherOCCUnderGradCourseProg']} required onChange={(e) => setUserData({ ...userData, "OtherOCCUnderGradCourseProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Field</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['OCCUnderGradFieldProg']} required onChange={(e) => setUserData({ ...userData, "OCCUnderGradFieldProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                {
+                                                                    userData.OCCUnderGradCourseProg === "Bachelor of Arts (B.A.)"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="English Literature">English Literature</option>
+                                                                            <hr />
+                                                                            <option value="History">History</option>
+                                                                            <hr />
+                                                                            <option value="Political Science">Political Science</option>
+                                                                            <hr />
+                                                                            <option value="Economics">Economics</option>
+                                                                            <hr />
+                                                                            <option value="Sociology">Sociology</option>
+                                                                            <hr />
+                                                                            <option value="Psychology">Psychology</option>
+                                                                            <hr />
+                                                                            <option value="Geography">Geography</option>
+                                                                            <hr />
+                                                                            <option value="Philosophy">Philosophy</option>
+                                                                            <hr />
+                                                                            <option value="Languages (e.g., Hindi, Urdu, Sanskrit)">Languages (e.g., Hindi, Urdu, Sanskrit)</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+                                                                {
+                                                                    userData.OCCUnderGradCourseProg === "Bachelor of Science (B.Sc.)"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="Mathematics">Mathematics</option>
+                                                                            <hr />
+                                                                            <option value="Physics">Physics</option>
+                                                                            <hr />
+                                                                            <option value="Chemistry">Chemistry</option>
+                                                                            <hr />
+                                                                            <option value="Biology">Biology</option>
+                                                                            <hr />
+                                                                            <option value="Computer Science">Computer Science</option>
+                                                                            <hr />
+                                                                            <option value="Environmental Science">Environmental Science</option>
+                                                                            <hr />
+                                                                            <option value="Statistics">Statistics</option>
+                                                                            <hr />
+                                                                            <option value="Electronics">Electronics</option>
+                                                                            <hr />
+                                                                            <option value="Geology">Geology</option>
+                                                                            <hr />
+                                                                            <option value="Botany">Botany</option>
+                                                                            <hr />
+                                                                            <option value="Zoology">Zoology</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+                                                                {
+                                                                    userData.OCCUnderGradCourseProg === "Bachelor of Commerce (B.Com.)"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="Accountancy">Accountancy</option>
+                                                                            <hr />
+                                                                            <option value="Business Studies">Business Studies</option>
+                                                                            <hr />
+                                                                            <option value="Economics">Economics</option>
+                                                                            <hr />
+                                                                            <option value="Financial Management">Financial Management</option>
+                                                                            <hr />
+                                                                            <option value="Taxation">Taxation</option>
+                                                                            <hr />
+                                                                            <option value="Business Law">Business Law</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+                                                                {
+                                                                    userData.OCCUnderGradCourseProg === "Professional Degrees"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="Bachelor of Engineering (B.E.)">Bachelor of Engineering (B.E.)</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Technology (B.Tech.)">Bachelor of Technology (B.Tech.)</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Computer Applications (BCA)">Bachelor of Computer Applications (BCA)</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Business Administration (BBA)">Bachelor of Business Administration (BBA)</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Architecture (B.Arch.)">Bachelor of Architecture (B.Arch.)</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Pharmacy (B.Pharm)">Bachelor of Pharmacy (B.Pharm)</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Education (B.Ed.)">Bachelor of Education (B.Ed.)</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Tourism">Bachelor of Tourism</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of IT">Bachelor of IT</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Hotel Manangment">Bachelor of Hotel Manangment</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Fashion Technology">Bachelor of Fashion Technology</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Mass Communication">Bachelor of Mass Communication</option>
+                                                                            <hr />
+                                                                            <option value="Bachelor of Agriculture">Bachelor of Agriculture</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+
+
+
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.OCCUnderGradFieldProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherOCCUnderGradFieldProg']} required onChange={(e) => setUserData({ ...userData, "OtherOCCUnderGradFieldProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div></>
+                                                : ""
+                                        }
+                                        {/* under grad fields */}
+                                        {
+                                            userData.OCCUnderGradFieldProg === "Bachelor of Engineering (B.E.)"
+                                                ?
+                                                <>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Branch</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['OCCUnderGradBranchProg']} required onChange={(e) => setUserData({ ...userData, "OCCUnderGradBranchProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                <option value="Civil Engineering">Civil Engineering</option>
+                                                                <hr />
+                                                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                                                <hr />
+                                                                <option value="Electrical Engineering">Electrical Engineering</option>
+                                                                <hr />
+                                                                <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                                                                <hr />
+                                                                <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+                                                                <hr />
+                                                                <option value="Chemical Engineering">Chemical Engineering</option>
+                                                                <hr />
+                                                                <option value="Aerospace Engineering">Aerospace Engineering</option>
+                                                                <hr />
+                                                                <option value="Biomedical Engineering">Biomedical Engineering</option>
+                                                                <hr />
+                                                                <option value="Environmental Engineering">Environmental Engineering</option>
+                                                                <hr />
+                                                                <option value="Industrial Engineering">Industrial Engineering</option>
+                                                                <hr />
+                                                                <option value="Agricultural Engineering">Agricultural Engineering</option>
+                                                                <hr />
+                                                                <option value="Mining Engineering">Mining Engineering</option>
+                                                                <hr />
+                                                                <option value="Petroleum Engineering">Petroleum Engineering</option>
+                                                                <hr />
+                                                                <option value="Textile Engineering">Textile Engineering</option>
+                                                                <hr />
+                                                                <option value="Metallurgical Engineering">Metallurgical Engineering</option>
+                                                                <hr />
+                                                                <option value="Automobile Engineering">Automobile Engineering</option>
+                                                                <hr />
+                                                                <option value="Instrumentation Engineering">Instrumentation Engineering</option>
+                                                                <hr />
+                                                                <option value="Ceramic Engineering">Ceramic Engineering</option>
+                                                                <hr />
+                                                                <option value="Marine Engineering">Marine Engineering</option>
+                                                                <hr />
+                                                                <option value="Fire Engineering">Fire Engineering</option>
+
+                                                                <hr />
+                                                                <option value="Other">Other (please specify)</option>
+                                                                {/* <hr />
+                                                            <option value="B Tech">B Tech</option>
+                                                            <hr />
+                                                            <option value="BE">BE</option> */}
+
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.OCCUnderGradBranchProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherOCCUnderGradBranchProg']} required onChange={(e) => setUserData({ ...userData, "OtherOCCUnderGradBranchProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div>
+                                                </>
+                                                : ""
+                                        }
+                                        {
+                                            userData.OCCUnderGradFieldProg === "Bachelor of Technology (B.Tech.)"
+                                                ?
+                                                <>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Branch</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['OCCUnderGradBranchProg']} required onChange={(e) => setUserData({ ...userData, "OCCUnderGradBranchProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                <option value="Computer Science and Engineering (CSE)">Computer Science and Engineering (CSE)</option>
+                                                                <hr />
+                                                                <option value="Mechanical Engineering (ME)">Mechanical Engineering (ME)</option>
+                                                                <hr />
+                                                                <option value="Electrical Engineering (EE)">Electrical Engineering (EE)</option>
+                                                                <hr />
+                                                                <option value="Civil Engineering (CE)">Civil Engineering (CE)</option>
+                                                                <hr />
+                                                                <option value="Electronics and Communication Engineering (ECE)">Electronics and Communication Engineering (ECE)</option>
+                                                                <hr />
+                                                                <option value="Information Technology (IT)">Information Technology (IT)</option>
+                                                                <hr />
+                                                                <option value="Chemical Engineering (ChemE)">Chemical Engineering (ChemE)</option>
+                                                                <hr />
+                                                                <option value="Aerospace Engineering">Aerospace Engineering</option>
+                                                                <hr />
+                                                                <option value="Biotechnology Engineering">Biotechnology Engineering</option>
+                                                                <hr />
+                                                                <option value="Automobile Engineering">Automobile Engineering</option>
+                                                                <hr />
+                                                                <option value="Instrumentation Engineering">Instrumentation Engineering</option>
+                                                                <hr />
+                                                                <option value="Environmental Engineering">Environmental Engineering</option>
+                                                                <hr />
+                                                                <option value="Industrial Engineering">Industrial Engineering</option>
+                                                                <hr />
+                                                                <option value="Agricultural Engineering">Agricultural Engineering</option>
+                                                                <hr />
+                                                                <option value="Petroleum Engineering">Petroleum Engineering</option>
+                                                                <hr />
+                                                                <option value="Mining Engineering">Mining Engineering</option>
+                                                                <hr />
+                                                                <option value="Metallurgical Engineering">Metallurgical Engineering</option>
+                                                                <hr />
+                                                                <option value="Textile Engineering">Textile Engineering</option>
+                                                                <hr />
+                                                                <option value="Bioinformatics">Bioinformatics</option>
+                                                                <hr />
+                                                                <option value="Food Technology">Food Technology</option>
+
+                                                                <hr />
+                                                                <option value="Other">Other (please specify)</option>
+                                                                {/* <hr />
+                                                            <option value="B Tech">B Tech</option>
+                                                            <hr />
+                                                            <option value="BE">BE</option> */}
+
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.OCCUnderGradBranchProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherOCCUnderGradBranchProg']} required onChange={(e) => setUserData({ ...userData, "OtherOCCUnderGradBranchProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div>
+                                                </>
+                                                : ""
+                                        }
+                                        {
+                                            userData.OCCProg === "Post Graduate"
+                                                ?
+                                                <>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Course</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['OCCPGCourseProg']} required onChange={(e) => setUserData({ ...userData, "OCCPGCourseProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                <option value="Masters in Arts (M.A.)">Masters in Arts (M.A.)</option>
+                                                                <hr />
+                                                                <option value="Masters in Science (M.Sc.)">Masters in Science (M.Sc.)</option>
+                                                                <hr />
+                                                                <option value="Masters in Commerce (M.Com.)">Masters in Commerce (M.Com.)</option>
+                                                                <hr />
+                                                                <option value="Professional Degrees">Professional Degrees</option>
+                                                                {/* <hr />
+                                                            <option value="B Tech">B Tech</option>
+                                                            <hr />
+                                                            <option value="BE">BE</option> */}
+
+                                                                <hr />
+                                                                <option value="Other">Other (please specify)</option>
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.OCCPGCourseProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherOCCPGCourseProg']} required onChange={(e) => setUserData({ ...userData, "OtherOCCPGCourseProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Field</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['OCCPGFieldProg']} required onChange={(e) => setUserData({ ...userData, "OCCPGFieldProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                {
+                                                                    userData.OCCPGCourseProg === "Masters in Arts (M.A.)"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="English Literature">English Literature</option>
+                                                                            <hr />
+                                                                            <option value="History">History</option>
+                                                                            <hr />
+                                                                            <option value="Political Science">Political Science</option>
+                                                                            <hr />
+                                                                            <option value="Economics">Economics</option>
+                                                                            <hr />
+                                                                            <option value="Sociology">Sociology</option>
+                                                                            <hr />
+                                                                            <option value="Psychology">Psychology</option>
+                                                                            <hr />
+                                                                            <option value="Geography">Geography</option>
+                                                                            <hr />
+                                                                            <option value="Philosophy">Philosophy</option>
+                                                                            <hr />
+                                                                            <option value="Languages (e.g., Hindi, Urdu, Sanskrit)">Languages (e.g., Hindi, Urdu, Sanskrit)</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+                                                                {
+                                                                    userData.OCCPGCourseProg === "Masters in Science (M.Sc.)"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="Mathematics">Mathematics</option>
+                                                                            <hr />
+                                                                            <option value="Physics">Physics</option>
+                                                                            <hr />
+                                                                            <option value="Chemistry">Chemistry</option>
+                                                                            <hr />
+                                                                            <option value="Biology">Biology</option>
+                                                                            <hr />
+                                                                            <option value="Computer Science">Computer Science</option>
+                                                                            <hr />
+                                                                            <option value="Environmental Science">Environmental Science</option>
+                                                                            <hr />
+                                                                            <option value="Statistics">Statistics</option>
+                                                                            <hr />
+                                                                            <option value="Electronics">Electronics</option>
+                                                                            <hr />
+                                                                            <option value="Geology">Geology</option>
+                                                                            <hr />
+                                                                            <option value="Botany">Botany</option>
+                                                                            <hr />
+                                                                            <option value="Zoology">Zoology</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+                                                                {
+                                                                    userData.OCCPGCourseProg === "Masters in Commerce (M.Com.)"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="Accountancy">Accountancy</option>
+                                                                            <hr />
+                                                                            <option value="Business Studies">Business Studies</option>
+                                                                            <hr />
+                                                                            <option value="Economics">Economics</option>
+                                                                            <hr />
+                                                                            <option value="Financial Management">Financial Management</option>
+                                                                            <hr />
+                                                                            <option value="Taxation">Taxation</option>
+                                                                            <hr />
+                                                                            <option value="Business Law">Business Law</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+                                                                {
+                                                                    userData.OCCPGCourseProg === "Professional Degrees"
+                                                                        ?
+                                                                        <>
+                                                                            <option value="Masters of Engineering (M.E.)">Masters of Engineering (M.E.)</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Technology (M.Tech.)">Masters of Technology (M.Tech.)</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Computer Applications (MCA)">Masters of Computer Applications (MCA)</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Business Administration (MBA)">Masters of Business Administration (MBA)</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Architecture (M.Arch.)">Masters of Architecture (M.Arch.)</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Pharmacy (M.Pharm)">Masters of Pharmacy (M.Pharm)</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Education (M.Ed.)">Mastersr of Education (M.Ed.)</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Tourism">Masters of Tourism</option>
+                                                                            <hr />
+                                                                            <option value="Masters of IT">Masters of IT</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Hotel Manangment">Masters of Hotel Manangment</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Fashion Technology">Masters of Fashion Technology</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Mass Communication">Masters of Mass Communication</option>
+                                                                            <hr />
+                                                                            <option value="Masters of Agriculture">Masters of Agriculture</option>
+
+                                                                            <hr />
+                                                                            <option value="Other">Other (please specify)</option>
+                                                                        </>
+                                                                        : ""
+                                                                }
+
+
+
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.OCCPGFieldProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherOCCPGFieldProg']} required onChange={(e) => setUserData({ ...userData, "OtherOCCPGFieldProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div></>
+                                                : ""
+                                        }
+                                        {/* under grad fields */}
+                                        {
+                                            userData.OCCPGFieldProg === "Masters of Engineering (M.E.)"
+                                                ?
+                                                <>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Branch</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['OCCPGBranchProg']} required onChange={(e) => setUserData({ ...userData, "OCCPGBranchProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                <option value="Civil Engineering">Civil Engineering</option>
+                                                                <hr />
+                                                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                                                <hr />
+                                                                <option value="Electrical Engineering">Electrical Engineering</option>
+                                                                <hr />
+                                                                <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                                                                <hr />
+                                                                <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+                                                                <hr />
+                                                                <option value="Chemical Engineering">Chemical Engineering</option>
+                                                                <hr />
+                                                                <option value="Aerospace Engineering">Aerospace Engineering</option>
+                                                                <hr />
+                                                                <option value="Biomedical Engineering">Biomedical Engineering</option>
+                                                                <hr />
+                                                                <option value="Environmental Engineering">Environmental Engineering</option>
+                                                                <hr />
+                                                                <option value="Industrial Engineering">Industrial Engineering</option>
+                                                                <hr />
+                                                                <option value="Agricultural Engineering">Agricultural Engineering</option>
+                                                                <hr />
+                                                                <option value="Mining Engineering">Mining Engineering</option>
+                                                                <hr />
+                                                                <option value="Petroleum Engineering">Petroleum Engineering</option>
+                                                                <hr />
+                                                                <option value="Textile Engineering">Textile Engineering</option>
+                                                                <hr />
+                                                                <option value="Metallurgical Engineering">Metallurgical Engineering</option>
+                                                                <hr />
+                                                                <option value="Automobile Engineering">Automobile Engineering</option>
+                                                                <hr />
+                                                                <option value="Instrumentation Engineering">Instrumentation Engineering</option>
+                                                                <hr />
+                                                                <option value="Ceramic Engineering">Ceramic Engineering</option>
+                                                                <hr />
+                                                                <option value="Marine Engineering">Marine Engineering</option>
+                                                                <hr />
+                                                                <option value="Fire Engineering">Fire Engineering</option>
+
+                                                                <hr />
+                                                                <option value="Other">Other (please specify)</option>
+                                                                {/* <hr />
+                                                            <option value="B Tech">B Tech</option>
+                                                            <hr />
+                                                            <option value="BE">BE</option> */}
+
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.OCCPGBranchProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherOCCPGBranchProg']} required onChange={(e) => setUserData({ ...userData, "OtherOCCPGBranchProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div>
+                                                </>
+                                                : ""
+                                        }
+                                        {
+                                            userData.OCCPGFieldProg === "Masters of Technology (M.Tech.)"
+                                                ?
+                                                <>
+                                                    <div className="indiDetails">
+                                                        <label htmlFor="email">Branch</label>
+                                                        <div className='customSelect'>
+                                                            <select value={userData['OCCPGBranchProg']} required onChange={(e) => setUserData({ ...userData, "OCCPGBranchProg": e.target.value })}>
+                                                                <option value="">Select Option</option>
+                                                                <hr />
+                                                                <option value="Computer Science and Engineering (CSE)">Computer Science and Engineering (CSE)</option>
+                                                                <hr />
+                                                                <option value="Mechanical Engineering (ME)">Mechanical Engineering (ME)</option>
+                                                                <hr />
+                                                                <option value="Electrical Engineering (EE)">Electrical Engineering (EE)</option>
+                                                                <hr />
+                                                                <option value="Civil Engineering (CE)">Civil Engineering (CE)</option>
+                                                                <hr />
+                                                                <option value="Electronics and Communication Engineering (ECE)">Electronics and Communication Engineering (ECE)</option>
+                                                                <hr />
+                                                                <option value="Information Technology (IT)">Information Technology (IT)</option>
+                                                                <hr />
+                                                                <option value="Chemical Engineering (ChemE)">Chemical Engineering (ChemE)</option>
+                                                                <hr />
+                                                                <option value="Aerospace Engineering">Aerospace Engineering</option>
+                                                                <hr />
+                                                                <option value="Biotechnology Engineering">Biotechnology Engineering</option>
+                                                                <hr />
+                                                                <option value="Automobile Engineering">Automobile Engineering</option>
+                                                                <hr />
+                                                                <option value="Instrumentation Engineering">Instrumentation Engineering</option>
+                                                                <hr />
+                                                                <option value="Environmental Engineering">Environmental Engineering</option>
+                                                                <hr />
+                                                                <option value="Industrial Engineering">Industrial Engineering</option>
+                                                                <hr />
+                                                                <option value="Agricultural Engineering">Agricultural Engineering</option>
+                                                                <hr />
+                                                                <option value="Petroleum Engineering">Petroleum Engineering</option>
+                                                                <hr />
+                                                                <option value="Mining Engineering">Mining Engineering</option>
+                                                                <hr />
+                                                                <option value="Metallurgical Engineering">Metallurgical Engineering</option>
+                                                                <hr />
+                                                                <option value="Textile Engineering">Textile Engineering</option>
+                                                                <hr />
+                                                                <option value="Bioinformatics">Bioinformatics</option>
+                                                                <hr />
+                                                                <option value="Food Technology">Food Technology</option>
+
+                                                                <hr />
+                                                                <option value="Other">Other (please specify)</option>
+                                                                {/* <hr />
+                                                            <option value="B Tech">B Tech</option>
+                                                            <hr />
+                                                            <option value="BE">BE</option> */}
+
+
+                                                            </select>
+                                                            <span className="customArrow">
+                                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                                            </span>
+                                                        </div>
+                                                        {
+                                                            userData.OCCPGBranchProg === "Other"
+                                                                ?
+                                                                <div className='other'>
+                                                                    <h5>
+                                                                        Specify:
+                                                                    </h5>
+                                                                    <input type="text" value={userData['OtherOCCPGBranchProg']} required onChange={(e) => setUserData({ ...userData, "OtherOCCPGBranchProg": e.target.value })} name="name" id="name" />
+                                                                </div>
+                                                                : ""
+                                                        }
+                                                    </div>
+                                                </>
+                                                : ""
+                                        }
+
+                                        {
+                                            userData.OCCProg === "Other"
+                                                ?
+                                                <div className='other'>
+                                                    <h5>
+                                                        Specify:
+                                                    </h5>
+                                                    <input type="text" value={userData['OtherOCCProg']} required onChange={(e) => setUserData({ ...userData, "OtherOCCProg": e.target.value })} name="name" id="name" />
+                                                </div>
+                                                : ""
+                                        }
+
+                                    </div>
+                                </>
+                                : ""
+                        }
+                        {
+                            userData.FTEduTrainProg === "Apprenticeship programs"
+                                ?
+                                <>
+                                    <div className="indiDetails">
+                                        <label htmlFor="email">Programes</label>
+                                        <div className="customSelect">
+
+                                            <select value={userData['AppProg']} required onChange={(e) => setUserData({ ...userData, "AppProg": e.target.value })}>
+                                                <option value="">Select Option</option>
+                                                <hr />
+                                                <option value="Diploma in Civil Engineering">Diploma in Civil Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Mechanical Engineering">Diploma in Mechanical Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Electrical Engineering">Diploma in Electrical Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Electronics and Communication Engineering">Diploma in Electronics and Communication Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Computer Science and Engineering">Diploma in Computer Science and Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Chemical Engineering">Diploma in Chemical Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Automobile Engineering">Diploma in Automobile Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Instrumentation Engineering">Diploma in Instrumentation Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Mining Engineering">Diploma in Mining Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Petroleum Engineering">Diploma in Petroleum Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Textile Engineering">Diploma in Textile Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Metallurgical Engineering">Diploma in Metallurgical Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Agricultural Engineering">Diploma in Agricultural Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Marine Engineering">Diploma in Marine Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Ceramic Engineering">Diploma in Ceramic Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Industrial Engineering">Diploma in Industrial Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Environmental Engineering">Diploma in Environmental Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Fire Engineering">Diploma in Fire Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Biomedical Engineering">Diploma in Biomedical Engineering</option>
+                                                <hr />
+                                                <option value="Diploma in Aerospace Engineering">Diploma in Aerospace Engineering</option>
+
+
+                                                <hr />
+                                                <option value="Other">Other (please specify)</option>
+
+                                            </select>
+                                            <span className="customArrow">
+                                                {/* <img className="logo" src={arrow} alt="arrow" /> */}
+                                            </span>
+                                        </div>
+
+
+                                        {
+                                            userData.AppProg === "Other"
+                                                ?
+                                                <div className='other'>
+                                                    <h5>
+                                                        Specify:
+                                                    </h5>
+                                                    <input type="text" value={userData['OtherAppProg']} required onChange={(e) => setUserData({ ...userData, "OtherAppProg": e.target.value })} name="name" id="name" />
+                                                </div>
+                                                : ""
+                                        }
+
+                                    </div>
+                                </>
+                                : ""
+                        }
+                        {
+                            userData.FTEduTrainProg === "Entrepreneurship training"
+                                ?
+                                <>
+                                    <div className="indiDetails">
+
+                                        <div className='other'>
+                                            <h5>
+                                                Specify:
+                                            </h5>
+                                            <input type="text" value={userData['EnterpreProg']} required onChange={(e) => setUserData({ ...userData, "EnterpreProg": e.target.value })} name="name" id="name" />
+                                        </div>
+                                    </div>
+                                </>
+                                : ""
+                        }
+
+                        {
+                            userData.FTEduTrainProg === "Other"
+                                ?
+                                <div className='other'>
+                                    <h5>
+                                        Specify:
+                                    </h5>
+                                    <input type="text" value={userData['OtherFTEduTrainProg']} required onChange={(e) => setUserData({ ...userData, "OtherFTEduTrainProg": e.target.value })} name="name" id="name" />
+                                </div>
+                                : ""
+                        }
+
+                    </div>
+                    : ""
+            }

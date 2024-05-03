@@ -1,0 +1,610 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+.container .header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 10px;
+}
+.container .header .logo {
+  width: 60px;
+}
+.container .header h1 {
+  font-weight: 600;
+  color: #FE0000;
+  font-size: 28px;
+}
+.container .header h1 .ar {
+  background-color: #FE0000;
+  color: white;
+  padding: 1px 7px;
+}
+.container .header h1 .de {
+  border: 1px solid #FE0000;
+  padding: 0 7px;
+}
+.container .header h4 {
+  font-size: 20px;
+  color: #FE0000;
+}
+.container .header p {
+  font-size: 14px;
+}
+.container .header .first {
+  font-weight: 500;
+}
+.container .header .second {
+  text-decoration: underline;
+}
+.container .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  padding: 15px;
+  width: 50%;
+}
+.container .wrapper .detailHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .wrapper .detailHeading h4 {
+  text-decoration: underline;
+}
+.container .wrapper form .pdfContainer {
+  display: flex;
+  flex-direction: column;
+}
+.container .wrapper form .pdfContainer .mainDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container .wrapper form .pdfContainer .mainDetails .topIndi,
+.container .wrapper form .pdfContainer .mainDetails .bottomIndi,
+.container .wrapper form .pdfContainer .mainDetails .lowerDetails {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  row-gap: 20px;
+}
+.container .wrapper form .pdfContainer .mainDetails .empDetails {
+  display: flex !important;
+  flex-direction: column;
+}
+.container .wrapper form .pdfContainer .mainDetails .empDetails .top {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.container .wrapper form .pdfContainer .mainDetails .pin {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.container .wrapper form .pdfContainer .mainDetails .pin .indiDetails .innerDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.container .wrapper form .pdfContainer .mainDetails .pin .indiDetails .innerDiv .pinInput {
+  width: 92% !important;
+}
+.container .wrapper form .pdfContainer .mainDetails .pin .indiDetails .innerDiv .innerInnerDiv {
+  display: flex;
+  flex-direction: column;
+}
+.container .wrapper form .pdfContainer .mainDetails .pin .indiDetails .innerDiv .innerInnerDiv .pincode {
+  width: 170px;
+}
+.container .wrapper form .pdfContainer .mainDetails .pin .indiDetails .areaDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .wrapper form .pdfContainer .mainDetails .bet {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.container .wrapper form .pdfContainer .mainDetails .bet .indiDetails input {
+  width: 92% !important;
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails label {
+  font-weight: 600;
+  font-size: 16px;
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails input {
+  width: 80%;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  outline: none;
+  font-size: 16px;
+  padding-left: 10px;
+  background-color: white;
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails .email {
+  width: 96% !important;
+  background-color: white;
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails .dob {
+  background-color: white;
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  outline: none;
+  font-size: 16px;
+  height: 40px;
+  background-color: white;
+  cursor: pointer;
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails .customSelect {
+  position: relative;
+  width: 100%;
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails .customSelect select {
+  width: 100%;
+  border: 1px solid #FE0000;
+  border-radius: 5px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails .customSelect .customArrow {
+  position: absolute;
+  top: 0;
+  color: black;
+  right: 0;
+  height: 96%;
+  padding: 0 10px;
+  border: 1px solid #FE0000;
+  border-radius: 1px 5px 5px 1px;
+  pointer-events: none;
+  width: 20px;
+  background: white;
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails .customSelect .customArrow:hover {
+  background-color: #FE0000;
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails .customSelect .customArrow::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails .customSelect .customArrow::before {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #FE0000;
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails .customSelect .customArrow:hover::before {
+  border-top: 10px solid white;
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails .sc {
+  width: 190px;
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails .phoneNumber .phoneVal {
+  text-align: center;
+  -webkit-appearance: none;
+}
+.container .wrapper form .pdfContainer .mainDetails .indiDetails .other {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.container .wrapper form .pdfContainer .mainDetails .adhNumber {
+  display: grid;
+  grid-template-columns: repeat(4, 0.1fr);
+  gap: 15px;
+  align-items: center;
+  background-color: white;
+}
+.container .wrapper form .pdfContainer .mainDetails .adhNumber .adhInput {
+  text-align: center;
+  width: 50px !important;
+  height: 40px !important;
+  padding: 0 !important;
+}
+.container .wrapper form .pdfContainer .mainDetails .adhNumber .adhVal {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  -webkit-appearance: none;
+}
+.container .wrapper form .pdfContainer .ed-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container .wrapper form .pdfContainer .ed-details .innder_ed {
+  display: flex;
+  justify-content: space-between;
+}
+.container .wrapper form .pdfContainer .ed-details .innder_ed .degree, .container .wrapper form .pdfContainer .ed-details .innder_ed .courses {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.container .wrapper form .pdfContainer .ed-details .innder_ed .degree .iti, .container .wrapper form .pdfContainer .ed-details .innder_ed .courses .iti {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.container .wrapper form .pdfContainer .ed-details .innder_ed .degree .iti input, .container .wrapper form .pdfContainer .ed-details .innder_ed .courses .iti input {
+  width: 185px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  outline: none;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.container .wrapper form .pdfContainer .ed-details .innder_ed .degree .iti select, .container .wrapper form .pdfContainer .ed-details .innder_ed .courses .iti select {
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  outline: none;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.container .wrapper form .pdfContainer .ed-details .innder_ed .courses {
+  gap: 10px !important;
+}
+.container .wrapper form .pdfContainer .ed-details .innder_ed .stream,
+.container .wrapper form .pdfContainer .ed-details .innder_ed .year {
+  display: flex;
+  flex-direction: column;
+  width: -moz-min-content;
+  width: min-content;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.container .wrapper form .pdfContainer .ed-details .innder_ed .stream input,
+.container .wrapper form .pdfContainer .ed-details .innder_ed .year input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  outline: none;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.container .wrapper form .pdfContainer .ed-details .innder_ed .stream select {
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  outline: none;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.container .wrapper form .pdfContainer .langs-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.container .wrapper form .pdfContainer .langs-details .langs_inner {
+  display: flex;
+  justify-content: space-between;
+}
+.container .wrapper form .pdfContainer .langs-details .langs_inner .langs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.container .wrapper form .pdfContainer .langs-details .langs_inner .langs .other_lang {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.container .wrapper form .pdfContainer .langs-details .langs_inner .langs .other_lang input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  outline: none;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.container .wrapper form .pdfContainer .langs-details .langs_inner .read,
+.container .wrapper form .pdfContainer .langs-details .langs_inner .write,
+.container .wrapper form .pdfContainer .langs-details .langs_inner .speak {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.container .wrapper form .pdfContainer .langs-details .langs_inner .read select,
+.container .wrapper form .pdfContainer .langs-details .langs_inner .write select,
+.container .wrapper form .pdfContainer .langs-details .langs_inner .speak select {
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  outline: none;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.container .wrapper form .pdfContainer .employeer-details {
+  display: flex;
+  flex-direction: column;
+}
+.container .wrapper form .pdfContainer .employeer-details .employeer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.container .wrapper form .pdfContainer .employeer-details .employeer .top {
+  display: flex;
+  justify-content: space-between;
+}
+.container .wrapper form .pdfContainer .employeer-details .employeer .top .emp,
+.container .wrapper form .pdfContainer .employeer-details .employeer .top .from,
+.container .wrapper form .pdfContainer .employeer-details .employeer .top .to,
+.container .wrapper form .pdfContainer .employeer-details .employeer .top .posi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.container .wrapper form .pdfContainer .employeer-details .employeer .top .emp input,
+.container .wrapper form .pdfContainer .employeer-details .employeer .top .from input,
+.container .wrapper form .pdfContainer .employeer-details .employeer .top .to input,
+.container .wrapper form .pdfContainer .employeer-details .employeer .top .posi input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  outline: none;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.container .wrapper form .pdfContainer .employeer-details .employeer .bottom {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.container .wrapper form .pdfContainer .employeer-details .employeer .bottom textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  outline: none;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.container .wrapper form .btns {
+  display: flex;
+  gap: 10px;
+}
+.container .wrapper form .btns button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: 1px solid;
+  outline: none;
+  background: white;
+  color: #FE0000;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.container .wrapper form .btns button:hover {
+  background: #FE0000;
+  color: white;
+  border: 1px solid;
+}
+
+@media screen and (width <= 540px) {
+  .container .wrapper {
+    width: 92%;
+  }
+  .container .wrapper form .pdfContainer .mainDetails .pin .indiDetails .innerDiv .innerInnerDiv .pincode {
+    width: 100%;
+  }
+  .container .wrapper form .pdfContainer .mainDetails .indiDetails label {
+    font-size: 14px;
+  }
+}
+@media screen and (width <= 440px) {
+  .wrapper {
+    width: 90% !important;
+    font-size: 14px;
+  }
+  .container .wrapper form .pdfContainer .ed-details .innder_ed {
+    overflow-x: scroll;
+    gap: 20px !important;
+  }
+  .container .wrapper form .pdfContainer .langs-details .langs_inner {
+    overflow-x: scroll;
+    gap: 20px !important;
+  }
+  .container .wrapper form .pdfContainer .employeer-details .employeer .top {
+    overflow-x: scroll;
+    gap: 20px !important;
+  }
+  .container .wrapper form .uploadContainer {
+    flex-direction: column;
+  }
+  .container .wrapper form .pdfContainer .mainDetails .topIndi,
+  .container .wrapper form .pdfContainer .mainDetails .bottomIndi, .lowerDetails {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .checkbox {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+@media screen and (width <= 390px) {
+  .container .header h4 {
+    font-size: 16px;
+  }
+  .container .header p {
+    font-size: 12px;
+  }
+  .container .wrapper form .pdfContainer .mainDetails .indiDetails label {
+    font-size: 14px;
+  }
+  .container .wrapper form .pdfContainer .mainDetails .indiDetails select {
+    font-size: 14px;
+  }
+  .container .wrapper form .btns button {
+    font-size: 16px;
+  }
+  .checkbox {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+.TyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  gap: 20px;
+}
+
+.TyContainer .header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.TyContainer .header .logo {
+  width: 60px;
+}
+
+.TyContainer .header h1 {
+  font-weight: 600;
+  color: #FE0000;
+  font-size: 28px;
+}
+
+.TyContainer .header h1 .ar {
+  background-color: #FE0000;
+  color: white;
+  padding: 1px 7px;
+}
+
+.TyContainer .header h1 .de {
+  border: 1px solid #FE0000;
+  padding: 0 7px;
+}
+
+.TyContainer .header h4 {
+  font-size: 20px;
+  color: #FE0000;
+}
+
+.TyContainer .header p {
+  font-size: 14px;
+}
+
+.TyContainer .header .first {
+  font-weight: 500;
+}
+
+.TyContainer .header .second {
+  text-decoration: underline;
+}
+
+.TyContainer .TyWrapper {
+  width: 90% !important;
+  font-size: 14px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  padding: 15px;
+  width: 50%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: unset;
+}
+
+.TyContainer .TyWrapper h1 {
+  color: #FE0000;
+}
+
+.TyContainer .TyWrapper p {
+  font-weight: 600;
+}
+
+.TyContainer .TyWrapper .TyMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.TyContainer .TyWrapper .TyMain .another {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: 1px solid;
+  outline: none;
+  background: white;
+  color: #FE0000;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.TyContainer .TyWrapper .TyMain .another:hover {
+  background: #FE0000;
+  color: white;
+  border: 1px solid;
+}
+
+.checkbox {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.checkboxDiv {
+  display: flex;
+  gap: 20px;
+}/*# sourceMappingURL=form.css.map */
