@@ -12,7 +12,6 @@ function GenForm() {
         setPhoneNumber(phValue); // Limit to 10 digits
         setUserData({ ...userData, "PhoneNumber": phValue })
     };
-    console.log("userdata: ", userData);
     return (
         <>
             <div className="topIndi">
@@ -33,12 +32,23 @@ function GenForm() {
                     <div className="customSelect">
                         <select value={userData['LegalStructure']} required onChange={(e) => setUserData({ ...userData, "LegalStructure": e.target.value })}>
                             <option value="">Select Option</option>
-                            <hr />
-                            <option value="corporation">corporation</option>
-                            <hr />
-                            <option value="non-profit">non-profit</option>
-                            <hr />
-                            <option value="partnership">partnership</option>
+                            <option value="Sole Proprietorship">Sole Proprietorship
+                            </option>
+                            <option value="Partnership">Partnership
+                            </option>
+                            <option value="Limited Liability Partnership">Limited Liability Partnership
+                            </option>
+                            <option value="Private Limited Companies">Private Limited Companies
+                            </option>
+                            <option value="Public Limited Companies">Public Limited Companies
+                            </option>
+                            <option value="One-Person Companies">One-Person Companies</option>
+                            <option value="Section 8 Company">Section 8 Company
+                            </option>
+                            <option value="Joint-Venture Company">Joint-Venture Company
+                            </option>
+                            <option value="Non-Government Organization (NGO)">Non-Government Organization (NGO)</option>
+
 
                         </select>
                         <span className="customArrow"></span>
@@ -61,7 +71,7 @@ function GenForm() {
                 <label htmlFor="text">Website</label>
                 <input className="email" type="text" value={userData['Website']} required onChange={(e) => setUserData({ ...userData, "Website": e.target.value })} name="email" id="email" />
             </div>
-            
+
 
             <div className="indiDetails">
                 <label htmlFor="phone">Phone Number (+91)</label>

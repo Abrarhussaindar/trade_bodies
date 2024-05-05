@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import "../form.css"
 
 import { multiStepContext } from '../../StepContext';
@@ -34,19 +34,22 @@ function AspiForm() {
             id: 20,
             label: "How do you perceive the impact of automation and technological advancements on the future demand for labor in your industry?",
             name: "automationImpact",
+            autoOther: "",
             options: ["Positive impact, creating new job opportunities", "Negative impact, leading to job displacement", "Neutral impact, with no significant change expected", "Unsure"]
         },
         {
             id: 21,
             label: "What measures does your organization take to ensure fair and equitable compensation practices for all employees?",
             name: "compensationPractices",
-            options: ["Regular salary reviews", "Pay transparency policies", "Equal pay audits", "Other (please specify)"]
+            compensationOther: "",
+            options: ["Regular salary reviews", "Pay transparency policies", "Equal pay audits", "Other"]
         },
         {
             id: 22,
             label: "How do you assess the effectiveness of your organization's employee retention strategies?",
             name: "retentionEffectiveness",
-            options: ["High retention rates", "Employee feedback surveys", "Low turnover rates", "Other (please specify)"]
+            retentionOther: "",
+            options: ["High retention rates", "Employee feedback surveys", "Low turnover rates", "Other"]
         },
         {
             id: 23,
@@ -70,7 +73,8 @@ function AspiForm() {
             id: 26,
             label: "What measures does your organization take to promote diversity and inclusion within the workforce?",
             name: "diversityPromotion",
-            options: ["Diversity training programs", "Diverse hiring practices", "Employee resource groups", "Other (please specify)"]
+            diversityOther: "",
+            options: ["Diversity training programs", "Diverse hiring practices", "Employee resource groups", "Other"]
         },
         {
             id: 27,
@@ -82,7 +86,8 @@ function AspiForm() {
             id: 28,
             label: "What role does gender pay equity play in your organization's compensation policies?",
             name: "genderPayEquity",
-            options: ["Ensuring equal pay for equal work", "Addressing gender pay gaps through policies and initiatives", "Not a priority", "Other (please specify)"]
+            genderPayOther: "",
+            options: ["Ensuring equal pay for equal work", "Addressing gender pay gaps through policies and initiatives", "Not a priority", "Other"]
         },
         {
             id: 29,
@@ -106,19 +111,21 @@ function AspiForm() {
             id: 32,
             label: "What factors contribute to the attractiveness of your local area for skilled workers?",
             name: "localAttractivenessFactors",
-            options: ["Quality of life amenities", "Cost of living", "Job opportunities", "Access to education and training", "Other (please specify)"]
+            options: ["Quality of life amenities", "Cost of living", "Job opportunities", "Access to education and training", "Other"]
         },
         {
             id: 33,
             label: "How do you engage with local educational institutions (e.g., universities, vocational schools) to meet your organization's skill needs?",
             name: "educationalEngagement",
-            options: ["Internship programs", "Collaborative research projects", "Curriculum advisory boards", "Other (please specify)"]
+            educationalOther: "",
+            options: ["Internship programs", "Collaborative research projects", "Curriculum advisory boards", "Other"]
         },
         {
             id: 34,
             label: "What initiatives does your organization undertake to attract and retain local talent?",
             name: "talentRetentionInitiatives",
-            options: ["Competitive salary and benefits packages", "Career development opportunities", "Employee wellness programs", "Other (please specify)"]
+            talentOther: "",
+            options: ["Competitive salary and benefits packages", "Career development opportunities", "Employee wellness programs", "Other"]
         },
         {
             id: 35,
@@ -130,7 +137,8 @@ function AspiForm() {
             id: 36,
             label: "What challenges do you encounter when recruiting from the local workforce?",
             name: "localRecruitmentChallenges",
-            options: ["Skills mismatch", "Wage expectations", "Competition from other employers", "Other (please specify)"]
+            localRecruitmentOther: "",
+            options: ["Skills mismatch", "Wage expectations", "Competition from other employers", "Other"]
         },
         {
             id: 37,
@@ -148,7 +156,8 @@ function AspiForm() {
             id: 39,
             label: "In what ways do you collaborate with local government or community organizations to address workforce development challenges?",
             name: "collaborationWithGovernment",
-            options: ["Training subsidies or grants", "Job fairs or career expos", "Workforce development initiatives", "Other (please specify)"]
+            collaborationOther: "",
+            options: ["Training subsidies or grants", "Job fairs or career expos", "Workforce development initiatives", "Other"]
         },
         {
             id: 40,
@@ -157,6 +166,7 @@ function AspiForm() {
             options: ["Very satisfied", "Satisfied", "Neutral", "Dissatisfied", "Very dissatisfied"]
         },
     ]
+    const [otherInputs, setOtherInputs] = useState({});
     const handleCheckboxChange = (questionId, optionValue, isChecked) => {
         setUserData(prevState => {
             const updatedData = { ...prevState };
@@ -166,13 +176,31 @@ function AspiForm() {
             }
             if (isChecked) {
                 updatedData[question.name].push(optionValue);
+                // If 'Other' option is selected, initialize the otherInputs state
+                if (optionValue === 'Other') {
+                    setOtherInputs(prevState => ({
+                        ...prevState,
+                        [question.name]: '', // Initialize input value for 'Other' option
+                    }));
+                }
             } else {
                 updatedData[question.name] = updatedData[question.name].filter(item => item !== optionValue);
+                // If 'Other' option is deselected, remove the corresponding input value from otherInputs state
+                if (optionValue === 'Other') {
+                    const { [question.name]: omit, ...rest } = otherInputs;
+                    setOtherInputs(rest);
+                }
             }
             return updatedData;
         });
     };
-    console.log("userdata: ", userData);
+
+    const handleOtherInputChange = (questionName, value) => {
+        setOtherInputs(prevState => ({
+            ...prevState,
+            [questionName]: value,
+        }));
+    };
     return (
         <div className="topIndi empDetails">
             {questions.map(question => (
@@ -190,6 +218,15 @@ function AspiForm() {
                                 onChange={(e) => handleCheckboxChange(question.id, option, e.target.checked)}
                             />
                             <label htmlFor={`question_${question.id}_${option}`}>{option}</label>
+                            {/* Render input field for 'Other' option */}
+                            {option === 'Other' && (userData[question.name] || []).includes(option) && (
+                                <input
+                                    type="text"
+                                    value={otherInputs[question.name]}
+                                    onChange={(e) => handleOtherInputChange(question.name, e.target.value)}
+                                    placeholder={`Enter ${question.label}`}
+                                />
+                            )}
                         </div>
                     ))}
                 </div>
