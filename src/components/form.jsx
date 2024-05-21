@@ -18,7 +18,6 @@ function Form() {
     const { currentStep, userData, setCurrentStep } = useContext(multiStepContext);
     const [clicked, setClicked] = useState(false)
     
-    console.log("userdata: ", userData);
     const handleClick = () =>{
         setClicked(true)
     }

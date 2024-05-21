@@ -12,6 +12,7 @@ function GenForm() {
         setPhoneNumber(phValue); // Limit to 10 digits
         setUserData({ ...userData, "PhoneNumber": phValue })
     };
+    console.log("userdata: ", userData)
     return (
         <>
             <div className="topIndi">

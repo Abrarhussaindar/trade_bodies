@@ -167,27 +167,31 @@ function AspiForm() {
         },
     ]
     const [otherInputs, setOtherInputs] = useState({});
+
     const handleCheckboxChange = (questionId, optionValue, isChecked) => {
+        const question = questions.find(q => q.id === questionId);
+        if (!question) return;
+
         setUserData(prevState => {
             const updatedData = { ...prevState };
-            const question = questions.find(q => q.id === questionId);
-            if (!updatedData[question.name]) {
-                updatedData[question.name] = [];
+            const questionName = question.name;
+
+            if (!updatedData[questionName]) {
+                updatedData[questionName] = [];
             }
+
             if (isChecked) {
-                updatedData[question.name].push(optionValue);
-                // If 'Other' option is selected, initialize the otherInputs state
+                updatedData[questionName].push(optionValue);
                 if (optionValue === 'Other') {
                     setOtherInputs(prevState => ({
                         ...prevState,
-                        [question.name]: '', // Initialize input value for 'Other' option
+                        [questionName]: ''
                     }));
                 }
             } else {
-                updatedData[question.name] = updatedData[question.name].filter(item => item !== optionValue);
-                // If 'Other' option is deselected, remove the corresponding input value from otherInputs state
+                updatedData[questionName] = updatedData[questionName].filter(item => item !== optionValue);
                 if (optionValue === 'Other') {
-                    const { [question.name]: omit, ...rest } = otherInputs;
+                    const { [questionName]: omit, ...rest } = otherInputs;
                     setOtherInputs(rest);
                 }
             }
@@ -198,18 +202,24 @@ function AspiForm() {
     const handleOtherInputChange = (questionName, value) => {
         setOtherInputs(prevState => ({
             ...prevState,
-            [questionName]: value,
+            [questionName]: value
+        }));
+
+        setUserData(prevState => ({
+            ...prevState,
+            [`${questionName}Other`]: value
         }));
     };
+    console.log(userData);
     return (
         <div className="topIndi empDetails">
             {questions.map(question => (
                 <div className="indiDetails" key={question.id}>
                     <label htmlFor={`question_${question.id}`}>{question.label}</label>
                     {question.options.map(option => (
-                        <div className='checkboxDiv' key={option}>
+                        <div className="checkboxDiv" key={option}>
                             <input
-                                className='checkbox'
+                                className="checkbox"
                                 type="checkbox"
                                 id={`question_${question.id}_${option}`}
                                 name={`question_${question.id}_${option}`}
@@ -218,11 +228,10 @@ function AspiForm() {
                                 onChange={(e) => handleCheckboxChange(question.id, option, e.target.checked)}
                             />
                             <label htmlFor={`question_${question.id}_${option}`}>{option}</label>
-                            {/* Render input field for 'Other' option */}
                             {option === 'Other' && (userData[question.name] || []).includes(option) && (
                                 <input
                                     type="text"
-                                    value={otherInputs[question.name]}
+                                    value={otherInputs[question.name] || ''}
                                     onChange={(e) => handleOtherInputChange(question.name, e.target.value)}
                                     placeholder={`Enter ${question.label}`}
                                 />
@@ -232,7 +241,6 @@ function AspiForm() {
                 </div>
             ))}
         </div>
-
     );
 }
 

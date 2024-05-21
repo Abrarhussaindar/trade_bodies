@@ -138,29 +138,8 @@ function EdForm() {
             [questionName]: value,
         }));
     };
-
     return (
-        // <div className="topIndi empDetails">
-        //     {questions.map(question => (
-        //         <div className="indiDetails" key={question.id}>
-        //             <label htmlFor={`question_${question.id}`}>{question.label}</label>
-        //             {question.options.map(option => (
-        //                 <div className='checkboxDiv' key={option}>
-        //                     <input
-        //                         className='checkbox'
-        //                         type="checkbox"
-        //                         id={`question_${question.id}_${option}`}
-        //                         name={`question_${question.id}_${option}`}
-        //                         value={option}
-        //                         checked={(userData[question.name] || []).includes(option)}
-        //                         onChange={(e) => handleCheckboxChange(question.id, option, e.target.checked)}
-        //                     />
-        //                     <label htmlFor={`question_${question.id}_${option}`}>{option}</label>
-        //                 </div>
-        //             ))}
-        //         </div>
-        //     ))}
-        // </div>
+
         <div className="topIndi empDetails">
             {questions.map(question => (
                 <div className="indiDetails" key={question.id}>
@@ -195,3 +174,26 @@ function EdForm() {
 }
 
 export default EdForm;
+
+
+        // <div className="topIndi empDetails">
+        //     {questions.map(question => (
+        //         <div className="indiDetails" key={question.id}>
+        //             <label htmlFor={`question_${question.id}`}>{question.label}</label>
+        //             {question.options.map(option => (
+        //                 <div className='checkboxDiv' key={option}>
+        //                     <input
+        //                         className='checkbox'
+        //                         type="checkbox"
+        //                         id={`question_${question.id}_${option}`}
+        //                         name={`question_${question.id}_${option}`}
+        //                         value={option}
+        //                         checked={(userData[question.name] || []).includes(option)}
+        //                         onChange={(e) => handleCheckboxChange(question.id, option, e.target.checked)}
+        //                     />
+        //                     <label htmlFor={`question_${question.id}_${option}`}>{option}</label>
+        //                 </div>
+        //             ))}
+        //         </div>
+        //     ))}
+        // </div>
